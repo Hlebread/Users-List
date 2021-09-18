@@ -1,0 +1,46 @@
+nav {
+	margin: 10px 0;
+	text-align: center;
+
+	button {
+		width: 30px;
+		height: 30px;
+		border: 1px solid #cccccc;
+		background: none;
+		cursor: pointer;
+		font: bold 15px sans-serif;
+		color: #47a6ff;
+		transition: 0;
+
+		&:hover {
+			color: #fff;
+			background: royalblue;
+		}
+
+		&:first-child {
+			border-right-color: transparent;
+		}
+
+		&:last-child {
+			border-left-color: transparent;
+		}
+
+		&.move {
+			width: 100px;
+
+			&:first-child {
+				border-radius: 5px 0 0 5px;
+			}
+
+			&:last-child {
+				border-radius: 0 5px 5px 0;
+			}
+		}
+
+		&.selected {
+			background-color: royalblue;
+			color: #fff;
+		}
+	}
+
+}

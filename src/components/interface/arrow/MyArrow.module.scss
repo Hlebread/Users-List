@@ -1,0 +1,70 @@
+.arrow {
+	position: absolute;
+	top: 5px;
+	right: 0;
+	cursor: pointer;
+	margin: 20px;
+	width: 45px;
+	height: 30px;
+
+	.left,
+	.right {
+		position: absolute;
+		background-color: transparent;
+		top: 10px;
+		border-radius: 2px;
+
+		&::after {
+			content: "";
+			background-color: #337AB7;
+			transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+			z-index: -1;
+		}
+	}
+
+	.left,
+	.right,
+	.left::after,
+	.right::after {
+		width: 20px;
+		height: 5px;
+		display: block;
+		float: right;
+
+	}
+
+	.left {
+		left: 7px;
+		transform: rotate(35deg);
+
+		&:after {
+			border-radius: 6px 10px 10px 6px;
+		}
+	}
+
+	.right {
+		left: 19px;
+		transform: rotate(-35deg);
+
+		&:after {
+			border-radius: 10px 6px 6px 10px;
+		}
+	}
+
+	&.open {
+
+		.left::after,
+		.right:after {
+			transform-origin: center center;
+
+		}
+
+		.left:after {
+			transform: rotate(-70deg);
+		}
+
+		.right:after {
+			transform: rotate(70deg);
+		}
+	}
+}
